@@ -901,9 +901,10 @@ background-color: #675bff !important;
 .table.hand-ratings a {
 	display: none;
 }
-.table.hand-ratings th {
-	display: flex;
-}
 .table.hand-ratings th img {
-	width: 50%;
+	width: 48%;
+}
+
+.table.hand-ratings th img:nth-child(2) {
+	float: right;
 }
