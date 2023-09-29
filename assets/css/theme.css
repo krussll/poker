@@ -902,6 +902,7 @@ background-color: #675bff !important;
 	display: none;
 }
 .table.hand-ratings th img {
+	float: left;
 	width: 48%;
 }
 
