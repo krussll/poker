@@ -1,12 +1,12 @@
 # Site
-name: "Zoo Near Me"
-title_suffix: "Zoo Near Me | Online Guides To The Best Zoos In The US State-By-State"
-title: "Online Guides To The Best Zoos In The US State-By-State"
-description: "Online Guides To The Best Zoos In The US State-By-State"
-meta_description: "Online Guides To The Best Zoos In The US State-By-State"
+name: "River Pairs"
+title_suffix: "River Pairs"
+title: "River Pairs"
+description: "River Pairs"
+meta_description: "River Pairs"
 logo: "/assets/images/zoonearme.png"
 favicon: "/assets/images/favicon.ico"
-baseurl: "https://www.zoonear.me"
+baseurl: "https://www.riverpairs.com"
 permalink: /:title
 email: ""
 google_analytics: ""
