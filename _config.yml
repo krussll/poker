@@ -5,7 +5,7 @@ title: "River Pairs"
 description: "River Pairs"
 meta_description: "River Pairs"
 logo: "/assets/images/riverpairs.png"
-favicon: "/assets/images/favicon.ico"
+favicon: "/assets/images/riverpairs.ico"
 baseurl: "https://www.riverpairs.com"
 permalink: /:title
 email: ""
