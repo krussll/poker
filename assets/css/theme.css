@@ -897,3 +897,7 @@ background-color: #675bff !important;
 .listfeaturedtag .thumbnail {
 	max-width: 200px;
 }
+
+.table.hand-ratings a {
+	display: none;
+}
