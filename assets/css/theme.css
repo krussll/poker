@@ -897,7 +897,9 @@ background-color: #675bff !important;
 .listfeaturedtag .thumbnail {
 	max-width: 200px;
 }
-
+.graphs h3 {
+    text-align: center;
+}
 .table.hand-ratings a {
 	display: none;
 }
