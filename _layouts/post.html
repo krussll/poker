@@ -101,6 +101,7 @@ post_class: post-template
 
 <script>
 	const ctx = document.getElementById('EquityChart');
+	const ctxWin = document.getElementById('WinChart');
   
 	new Chart(ctx, {
 	  type: 'doughnut',
@@ -110,6 +111,21 @@ post_class: post-template
 			}],
 			labels: [
 				'Pair Of Twos',
+				'Pair Of Twos'
+			]
+		},
+	  options: {
+	  }
+	});
+	new Chart(ctxWin, {
+	  type: 'doughnut',
+	  data: {
+			datasets: [{
+				data: [2.08, 95.83, 2.08]
+			}],
+			labels: [
+				'Pair Of Twos',
+				'Tie',
 				'Pair Of Twos'
 			]
 		},
