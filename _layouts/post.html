@@ -98,3 +98,22 @@ post_class: post-template
 ================================================== -->
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+	const ctx = document.getElementById('myChart');
+  
+	new Chart(ctx, {
+	  type: 'doughnut',
+	  data: {
+			datasets: [{
+				data: [50, 50]
+			}],
+			labels: [
+				'Pair Of Twos',
+				'Pair Of Twos'
+			]
+		},
+	  options: {
+	  }
+	});
+  </script>
