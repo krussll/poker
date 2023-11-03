@@ -20,6 +20,8 @@ post_class: post-template
 			{% if page.first_paragraph %}
 			<div class="intro-block">{{ page.first_paragraph }}</div>
 			{% endif %}
+
+			
 			
 			<!-- Post Featured Image
 			{% if page.image %}<img width="730" height="410" class="featured-image img-fluid" src="{{ site.baseurl }}/{{ page.image }}" title="{{ page.title }}" alt="{{ page.title }}" itemprop="image">{% endif %}
@@ -27,7 +29,6 @@ post_class: post-template
 
 			<!-- Post Content -->
 			<div class="article-post"  itemprop="articleBody"> 
-				<span id="ezoic-pub-video-placeholder-1"></span>
 				{{content}}
 				<div class="clearfix"></div>
 			</div>
@@ -95,3 +96,5 @@ post_class: post-template
 
 <!-- End Article
 ================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
