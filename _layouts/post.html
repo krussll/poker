@@ -103,11 +103,12 @@ post_class: post-template
 	const ctx = document.getElementById('EquityChart');
 	const ctxWin = document.getElementById('WinChart');
   
+	{% if page.eq_1 and page.eq_2 %}
 	new Chart(ctx, {
 	  type: 'doughnut',
 	  data: {
 			datasets: [{
-				data: [50, 50]
+				data: [{{ page.eq_1 }}, {{ page.eq_2 }}]
 			}],
 			labels: [
 				'Pair Of Twos',
@@ -117,11 +118,14 @@ post_class: post-template
 	  options: {
 	  }
 	});
+	{% endif %}
+
+	{% if page.win_1 and page.win_2 and page.tie %}
 	new Chart(ctxWin, {
 	  type: 'doughnut',
 	  data: {
 			datasets: [{
-				data: [2.08, 95.83, 2.08]
+				data: [{{ page.win_1 }}, {{ page.tie }}, {{ page.tie }}]
 			}],
 			labels: [
 				'Pair Of Twos',
@@ -132,4 +136,6 @@ post_class: post-template
 	  options: {
 	  }
 	});
+
+	{% endif %}
   </script>
