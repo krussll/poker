@@ -112,8 +112,8 @@ post_class: post-template
 				backgroundColor: ["#292A53", "#9D252E"]
 			}],
 			labels: [
-				'{{ page.card_1_label }}',
-				'{{ page.card_2_label }}'
+				'{{ page.card_1_label }} {{ page.eq_1 }}%',
+				'{{ page.card_2_label }} {{ page.eq_2 }}%'
 			]
 		},
 	  options: {
@@ -130,9 +130,9 @@ post_class: post-template
 				backgroundColor: ["#292A53", "#946C38", "#9D252E"]
 			}],
 			labels: [
-				'{{ page.card_1_label }}',
-				'Tie',
-				'{{ page.card_2_label }}'
+				'{{ page.card_1_label }} {{ page.win_1 }}%',
+				'Tie {{ page.tie }}%',
+				'{{ page.card_2_label }} {{ page.win_2 }}%'
 			]
 		},
 	  options: {
