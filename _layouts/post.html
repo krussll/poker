@@ -108,7 +108,8 @@ post_class: post-template
 	  type: 'doughnut',
 	  data: {
 			datasets: [{
-				data: [{{ page.eq_1 }}, {{ page.eq_2 }}]
+				data: [{{ page.eq_1 }}, {{ page.eq_2 }}],
+				backgroundColor: ["#292A53", "#9D252E"]
 			}],
 			labels: [
 				'{{ page.card_1_label }}',
@@ -125,7 +126,8 @@ post_class: post-template
 	  type: 'doughnut',
 	  data: {
 			datasets: [{
-				data: [{{ page.win_1 }}, {{ page.tie }}, {{ page.tie }}]
+				data: [{{ page.win_1 }}, {{ page.tie }}, {{ page.tie }}],
+				backgroundColor: ["#292A53", "#946C38", "#9D252E"]
 			}],
 			labels: [
 				'{{ page.card_1_label }}',
