@@ -111,8 +111,8 @@ post_class: post-template
 				data: [{{ page.eq_1 }}, {{ page.eq_2 }}]
 			}],
 			labels: [
-				'Pair Of Twos',
-				'Pair Of Twos'
+				'{{ page.card_1_label }}',
+				'{{ page.card_2_label }}'
 			]
 		},
 	  options: {
@@ -128,9 +128,9 @@ post_class: post-template
 				data: [{{ page.win_1 }}, {{ page.tie }}, {{ page.tie }}]
 			}],
 			labels: [
-				'Pair Of Twos',
+				'{{ page.card_1_label }}',
 				'Tie',
-				'Pair Of Twos'
+				'{{ page.card_2_label }}'
 			]
 		},
 	  options: {
