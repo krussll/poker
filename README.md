@@ -1,37 +1,27 @@
-## Welcome to GitHub Pages
+# River Pairs (www.riverpairs.com)
 
-You can use the [editor on GitHub](https://github.com/krussll/spencer-bowls/edit/gh-pages/README.md) to maintain and preview the content for your website in Markdown files.
+**River Pairs** is a large-scale programmatic SEO (pSEO) and poker strategy reference website. Built on Jekyll and deployed via GitHub Pages, it catalogs pre-flop odds, equities, hand ratings, and showdown frequencies for every heads-up starting hand combination in Texas Hold'em.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Overview
+- **Live Site**: [www.riverpairs.com](https://www.riverpairs.com)
+- **Engine**: Jekyll 4+ with Liquid templating
+- **Combinatorial Scope**: 169 distinct canonical starting hands yielding 14,365 unique heads-up pre-flop match-up articles.
+- **AI Machine Index**: [`/llms.txt`](/llms.txt) provides structured context for AI engines (SearchGPT, Claude, Perplexity).
+- **IndexNow Integration**: Verified via IndexNow API key for instant multi-engine indexation (Bing, Yandex, Seznam).
 
-### Markdown
+## Architecture
+- `_posts/`: Markdown files for each of the 14,365 matchups plus pillar strategy guides.
+- `_layouts/`: Liquid templates (`default.html`, `post.html`, `page.html`).
+- `_includes/`: Modular UI partials (cards, sidebar, navigation, search).
+- `assets/`: Front-end styles (SASS/Bootstrap 4), icons, and card image assets.
+- `sitemap.xml`: Canonical XML sitemap with daily/weekly crawl priorities.
+- `robots.txt`: Search crawler configuration with explicit AI crawler access.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Strategy Pillars
+- [Sklansky Hand Groups Explained](/sklansky-rating-explained)
+- [The Chen Formula Explained](/chen-formula-explained)
+- [Phil Hellmuth Starting Tiers](/Hellmuth-tier-explained)
+- [Expected Value (EV) in Poker](/expected-value-explained)
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/krussll/spencer-bowls/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## License & Attribution
+Content & Simulation Models &copy; Reece Williams. All rights reserved.

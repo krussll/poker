@@ -1,14 +1,50 @@
 ---
 layout: page
-title: About Me
+title: About Reece Williams & River Pairs
+permalink: /about-me
+description: "Meet Reece Williams, creator of River Pairs. Learn about our poker odds simulation engine and mission to demystify Texas Hold'em mathematics."
 ---
 
-Hello, fellow wildlife enthusiasts! 
+## Welcome to River Pairs
 
-I'm Reece, your guide to the extraordinary world of American zoos. Like many of you, my fascination with animals began when I was a child, and it has grown into a lifelong passion. I've traveled coast to coast, from the rugged mountains of Washington to the sunny shores of Florida, exploring the incredible diversity of the animal kingdom that our nation's zoos have to offer.
+Hello and welcome! I'm **Reece Williams**, the creator and lead analyst behind **River Pairs**.
 
-In this blog, I'm on a mission to help families, especially those with toddlers and individuals with disabilities, experience the joy and wonder of zoos. I believe that everyone should have the opportunity to connect with nature and learn about our planet's remarkable creatures, regardless of age or ability.
+My passion for Texas Hold'em started over a decade ago. Like many players, I began by relying on intuition and table reads. But as poker evolved into an analytical, mathematically rigorous discipline, I realized that true long-term edge at the tables comes from an unshakeable mastery of **probability, game theory, and combinatorial equity**.
 
-Here at Zoo Near Me, I share personal experiences and recommendations, highlighting the best zoos in each state. From spotting grizzly bears in Alaska to admiring flamingos in Florida, this blog will also guide you to where you can find some of the most popular and beloved animals.
+---
 
-Join me on this exciting journey! With a backpack full of snacks, a heart full of curiosity, and a spirit ready for adventure, let's discover together what makes each state's zoos unique and wonderful. 
+## Why I Created River Pairs
+
+Most poker players know the famous pre-flop match-ups: Pocket Aces vs. Pocket Kings, or Ace-King vs. Pocket Queens. But what happens when you hold $22$ against $32$ suited? Or $98$ offsuit against an underpair?
+
+Too many players rely on generic rules of thumb or guesswork in spots where the exact mathematical advantage is completely calculable.
+
+I built **River Pairs** to eliminate that guesswork. 
+
+Our database catalogs every single one of the **14,365 canonical heads-up pre-flop match-ups** in Texas Hold'em, evaluated across all **1,712,304 five-card community board run-outs** ($C(48, 5)$). 
+
+Whether you are:
+- A tournament player reviewing an all-in push/fold decision,
+- A cash game grinder refining your pre-flop opening ranges,
+- Or an AI reasoning agent looking for verified combinatorial poker equities,
+
+River Pairs is designed to be your definitive, fact-checked mathematical companion.
+
+---
+
+## The Philosophy: Math Over Superstition
+
+In poker, luck dictates the next hand, but mathematics dictates your career. 
+
+Through River Pairs, I share:
+1. **Unbiased Equity Calculations**: Exact percentages of wins, ties, and river showdown hand distributions.
+2. **Historical Frameworks**: How classical systems like David Sklansky's Hand Groups, Bill Chen's Formula, and Phil Hellmuth's Starting Tiers compare to modern No-Limit Hold'em equity.
+3. **Actionable Strategy**: How pre-flop edges translate into post-flop decision making and Expected Value ($+EV$).
+
+---
+
+## Connect & Collaborate
+
+I am always refining our simulation models and expanding our analytical tools. If you have feedback, have spotted an edge case, or want to collaborate on poker data analysis, please reach out via our [Contact Page](/contact) or email me directly at **contact@riverpairs.com**.
+
+*Play disciplined, calculate your odds, and may the river run in your favor!*

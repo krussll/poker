@@ -1,2 +1,20 @@
-User-Agent: *
-Disallow: 
+User-agent: *
+Allow: /
+
+# AI Search Engines & Answer Bots (GEO / AEO)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://www.riverpairs.com/sitemap.xml

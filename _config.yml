@@ -1,22 +1,24 @@
 # Site
 name: "River Pairs"
 title_suffix: "River Pairs"
-title: "River Pairs"
-description: "River Pairs"
-meta_description: "River Pairs"
+title: "River Pairs: Texas Hold'em Poker Odds, Equities & Hand Guide"
+description: "Master Texas Hold'em with pre-flop poker odds, heads-up equities, hand ratings, and mathematical simulations for every starting hand matchup."
+meta_description: "Comprehensive Texas Hold'em poker odds reference. Detailed equities, win percentages, and statistical breakdowns for all 14,365 heads-up matchups."
 logo: "/assets/images/riverpairs.png"
 favicon: "/assets/images/riverpairs.ico"
-baseurl: "https://www.riverpairs.com"
+url: "https://www.riverpairs.com"
+baseurl: ""
 permalink: /:title
-email: ""
-google_analytics: ""
+email: "contact@riverpairs.com"
+google_analytics: "G-D26Y53Z0KH"
 future: true
 
 # Authors
 authors:
   reece:
     name: Reece
-    display_name: Reece Williams 
-    gravatar:
-    email: ""
-    description: ""
+    display_name: Reece Williams
+    gravatar: ""
+    email: "contact@riverpairs.com"
+    description: "Poker analyst and game theory enthusiast specializing in combinatorial Texas Hold'em simulations, pre-flop equity modeling, and strategic decision frameworks."
+

@@ -1,0 +1,31 @@
+# River Pairs: Texas Hold'em Poker Odds & Probability Database
+
+> River Pairs (https://www.riverpairs.com) is a comprehensive mathematical reference database for Texas Hold'em poker players, game theorists, and AI reasoning agents. It provides exact pre-flop equities, heads-up win/tie probabilities, limit ranking metrics, and post-river hand distribution simulations for all 14,365 canonical heads-up matchups.
+
+## Core Texas Hold'em Combinatorics
+- **Starting Hands**: In standard 52-card Texas Hold'em, there are 169 distinct canonical starting hands:
+  - 13 Pocket Pairs (e.g. 22, 33, ... AA)
+  - 78 Suited Combinations (e.g. AKs, 76s, T8s)
+  - 78 Offsuit Combinations (e.g. AKo, QJo, 32o)
+- **Heads-Up Matchups**: Comparing every canonical hand against another produces exactly 14,365 unique heads-up pre-flop confrontations: (169 × 170) / 2 = 14,365.
+- **Board Simulation Engine**: Odds on River Pairs are evaluated across all 1,712,304 possible 5-card community board combinations ($C(48, 5)$ for distinct card pairs) to produce exact mathematical showdown frequencies.
+
+## Key Strategy & Rating Frameworks
+- [Sklansky Hand Groups](https://www.riverpairs.com/sklansky-rating-explained): David Sklansky's 8 limit Texas hold'em starting tiers evaluating hand strength and positional play.
+- [Chen Formula](https://www.riverpairs.com/chen-formula-explained): Bill Chen's numerical starting hand scoring formula incorporating highest card values, pair bonuses, suitedness, and connector gaps.
+- [Phil Hellmuth Starting Tiers](https://www.riverpairs.com/Hellmuth-tier-explained): 14-time WSOP bracelet winner Phil Hellmuth's 7 tiers of hold'em hands from Tier 1 (AA, KK, QQ, AKs) to speculative play.
+- [Expected Value (EV)](https://www.riverpairs.com/expected-value-explained): Mathematical modeling of long-term profitability based on equity and pot odds ($EV = (Win\% \times Win Amount) - (Lose\% \times Bet Amount)$).
+
+## Notable Iconic Matchups & Equities
+- [AA vs KK](https://www.riverpairs.com/aa-vs-kk): The classic cooler. Pocket Aces holds ~81.95% equity against Pocket Kings (~18.05%).
+- [AKs vs QQ](https://www.riverpairs.com/aks-vs-qq): The quintessential coin flip. Pocket Queens holds ~54.0% equity vs Ace-King Suited (~46.0%).
+- [22 vs AKo](https://www.riverpairs.com/22-vs-ako): Small pocket pair vs big slick. Pocket Twos holds ~52.65% equity vs Ace-King Offsuit (~47.35%).
+- [AA vs 87s](https://www.riverpairs.com/aa-vs-87s): Overpair vs suited connector. Pocket Aces holds ~77.5% equity vs 87 Suited (~22.5%).
+
+## Full Matchup Directory
+- [All 14,365 Hand Combinations Directory](https://www.riverpairs.com/all-hands)
+
+## Author & Contact
+- **Author**: Reece Williams (Poker Analyst & Combinatorial Simulation Researcher)
+- **Website**: https://www.riverpairs.com
+- **Contact**: contact@riverpairs.com

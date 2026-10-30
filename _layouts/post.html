@@ -21,6 +21,33 @@ post_class: post-template
 			<div class="intro-block">{{ page.first_paragraph }}</div>
 			{% endif %}
 
+			{% if page.eq_1 and page.eq_2 %}
+			<div class="quick-verdict-box alert alert-info mt-3 mb-4 p-3 border rounded" style="background: #f0f7fd; border-left: 5px solid #00B2D8;">
+				<h4 class="h5 font-weight-bold mb-2"><i class="fas fa-trophy mr-1 text-primary"></i> Quick Matchup Summary</h4>
+				<p class="mb-1">
+					<strong>Pre-Flop Favorite:</strong> 
+					{% if page.eq_1 > page.eq_2 %}
+						<span class="text-success font-weight-bold">{{ page.card_1_label }}</span> ({{ page.eq_1 }}% Equity)
+					{% elsif page.eq_2 > page.eq_1 %}
+						<span class="text-success font-weight-bold">{{ page.card_2_label }}</span> ({{ page.eq_2 }}% Equity)
+					{% else %}
+						<span class="font-weight-bold">Dead Heat</span> (50.00% Equity each)
+					{% endif %}
+					&nbsp;&bull;&nbsp; 
+					<strong>Win Probabilities:</strong> {{ page.card_1_label }}: {{ page.win_1 }}% &bull; {{ page.card_2_label }}: {{ page.win_2 }}% &bull; Tie: {{ page.tie }}%
+				</p>
+				<p class="mb-0 small text-muted">
+					{% if page.eq_1 > 48 and page.eq_1 < 52 %}
+						This is a classic Texas Hold'em <strong>"coin flip"</strong> scenario where neither starting hand possesses a decisive mathematical advantage pre-flop.
+					{% elsif page.eq_1 >= 70 or page.eq_2 >= 70 %}
+						This matchup is heavily <strong>dominated</strong>, with the favorite holding a commanding statistical edge prior to the flop.
+					{% else %}
+						The favorite carries a clear mathematical edge, though post-flop board connectivity will heavily influence the winning outcome.
+					{% endif %}
+				</p>
+			</div>
+			{% endif %}
+
 			
 			
 			<!-- Post Featured Image
@@ -73,7 +100,7 @@ post_class: post-template
 						     alt="{{ author.display_name }}">
 					</div>
 					<div class="col-md-10">
-						<a class="link-dark" href="/about-us"><span itemprop="name">{{ author.display_name }} </span></a>
+						<a class="link-dark" href="{{ site.baseurl }}/about-me"><span itemprop="name">{{ author.display_name }} </span></a>
 						<span class="author-description">{{ author.description }}</span>
 					</div>
 				</div>
@@ -141,3 +168,64 @@ post_class: post-template
 
 	{% endif %}
   </script>
+
+{% if page.eq_1 and page.eq_2 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "{{ site.url }}{{ page.url }}#article",
+      "headline": {{ page.title | jsonify }},
+      "description": {{ page.description | jsonify }},
+      "datePublished": "{{ page.date | date_to_xmlschema }}",
+      {% if page.last_modified_at %}
+      "dateModified": "{{ page.last_modified_at | date_to_xmlschema }}",
+      {% else %}
+      "dateModified": "{{ page.date | date_to_xmlschema }}",
+      {% endif %}
+      "mainEntityOfPage": "{{ site.url }}{{ page.url }}",
+      "publisher": {
+        "@type": "Organization",
+        "@id": "{{ site.url }}/#organization",
+        "name": "River Pairs",
+        "url": "{{ site.url }}",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ site.url }}/assets/images/riverpairs.png"
+        }
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "{{ site.url }}/about-me#person",
+        "name": "{{ author.display_name }}",
+        "url": "{{ site.url }}/about-me"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "{{ site.url }}{{ page.url }}#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who has the advantage between {{ page.card_1_label }} and {{ page.card_2_label }} in Texas Hold'em?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{% if page.eq_1 > page.eq_2 %}{{ page.card_1_label }} is the pre-flop favorite holding {{ page.eq_1 }}% equity compared to {{ page.card_2_label }}'s {{ page.eq_2 }}%.{% elsif page.eq_2 > page.eq_1 %}{{ page.card_2_label }} is the pre-flop favorite holding {{ page.eq_2 }}% equity compared to {{ page.card_1_label }}'s {{ page.eq_1 }}%.{% else %}Both hands have identical equity at {{ page.eq_1 }}%.{% endif %}"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the exact win and tie odds for {{ page.card_1_label }} vs {{ page.card_2_label }}?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In a heads-up showdown, {{ page.card_1_label }} wins {{ page.win_1 }}% of the time, {{ page.card_2_label }} wins {{ page.win_2 }}% of the time, and the hands tie {{ page.tie }}% of the time."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+{% endif %}
