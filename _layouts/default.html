@@ -1,233 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D26Y53Z0KH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D26Y53Z0KH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-D26Y53Z0KH');
-</script>
+    gtag('config', 'G-D26Y53Z0KH');
+  </script>
 
-<meta charset="utf-8">
-<meta name="google-site-verification" content="3hy6rng49LmxKJ53UCGkhh56RmYZTdFZoHEpkktdxOY" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="max-image-preview:large">
-{% if page.card_1_label and page.card_2_label %}
-  {% capture page_title %}{{ page.card_1_label }} vs {{ page.card_2_label }} Odds & Equity (Who Wins?) | {{ site.title_suffix }}{% endcapture %}
-  {% capture page_meta_desc %}{{ page.card_1_label }} vs {{ page.card_2_label }}: {{ page.card_1_label }} holds {{ page.eq_1 }}% equity vs {{ page.card_2_label }} ({{ page.eq_2 }}%) with a {{ page.tie }}% tie probability. Detailed pre-flop odds and post-flop strategy.{% endcapture %}
-{% else %}
+  <meta charset="utf-8">
+  <meta name="google-site-verification" content="3hy6rng49LmxKJ53UCGkhh56RmYZTdFZoHEpkktdxOY" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="max-image-preview:large">
+  {% if page.card_1_label and page.card_2_label %}
+  {% capture page_title %}{{ page.card_1_label }} vs {{ page.card_2_label }} Odds & Equity (Who Wins?) | {{
+  site.title_suffix }}{% endcapture %}
+  {% capture page_meta_desc %}{{ page.card_1_label }} vs {{ page.card_2_label }}: {{ page.card_1_label }} holds {{
+  page.eq_1 }}% equity vs {{ page.card_2_label }} ({{ page.eq_2 }}%) with a {{ page.tie }}% tie probability. Detailed
+  pre-flop odds and post-flop strategy.{% endcapture %}
+  {% else %}
   {% capture page_title %}{{ page.title }} | {{ site.title_suffix }}{% endcapture %}
-  {% capture page_meta_desc %}{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
-{% endif %}
+  {% capture page_meta_desc %}{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif
+  %}{% endcapture %}
+  {% endif %}
 
-<link rel="icon" href="{{ site.baseurl }}/riverpairs.ico">
-<meta name="description" content="{{ page_meta_desc }}">
-	
-{% if page.tags != blank %}	
-<meta name="keyword" content="{{ page.tags }}">
-{% endif %}
-	
-<title>{{ page_title }}</title>
-  
-<link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+  <link rel="icon" href="{{ site.baseurl }}/riverpairs.ico">
+  <meta name="description" content="{{ page_meta_desc }}">
 
-<!-- Open Graph / Facebook / Discord -->
-<meta property="og:site_name" content="{{ site.name }}">
-<meta property="og:title" content="{{ page_title }}">
-<meta property="og:description" content="{{ page_meta_desc }}">
-<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
-<meta property="og:url" content="{{ site.url }}{{ page.url }}">
-<meta property="og:image" content="{{ site.url }}{% if page.image %}/{{ page.image }}{% else %}/assets/images/riverpairs.png{% endif %}">
+  {% if page.tags != blank %}
+  <meta name="keyword" content="{{ page.tags }}">
+  {% endif %}
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ page_title }}">
-<meta name="twitter:description" content="{{ page_meta_desc }}">
-<meta name="twitter:image" content="{{ site.url }}{% if page.image %}/{{ page.image }}{% else %}/assets/images/riverpairs.png{% endif %}">
+  <title>{{ page_title }}</title>
 
-<!-- IndexNow API Key -->
-<meta name="indexnow-key" content="e3d4891b72a64c8f95c102b37d45e691">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css?family=Rubik:400,400i,500,500i,700,700i" rel="stylesheet">
-<link href="{{ site.baseurl }}/assets/css/theme.css" rel="stylesheet">
-<link href="{{ site.baseurl }}/assets/css/custom.css" rel="stylesheet">
+  <!-- Open Graph / Facebook / Discord -->
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{{ page_title }}">
+  <meta property="og:description" content="{{ page_meta_desc }}">
+  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image"
+    content="{{ site.url }}{% if page.image %}/{{ page.image }}{% else %}/assets/images/riverpairs.png{% endif %}">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page_title }}">
+  <meta name="twitter:description" content="{{ page_meta_desc }}">
+  <meta name="twitter:image"
+    content="{{ site.url }}{% if page.image %}/{{ page.image }}{% else %}/assets/images/riverpairs.png{% endif %}">
+
+  <!-- IndexNow API Key -->
+  <meta name="indexnow-key" content="e3d4891b72a64c8f95c102b37d45e691">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+    integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Rubik:400,400i,500,500i,700,700i" rel="stylesheet">
+  <link href="{{ site.baseurl }}/assets/css/theme.css" rel="stylesheet">
+  <link href="{{ site.baseurl }}/assets/css/custom.css" rel="stylesheet">
 
 </head>
 
 
 
 {% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}
+
 <body class="{{ layout }}">
 
 
-<!-- Begin Menu Navigation
+  <!-- Begin Menu Navigation
 ================================================== -->
-<header class="navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsWow" aria-controls="navbarsWow" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+  <header class="navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsWow"
+      aria-controls="navbarsWow" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
     <div class="container">
 
-        <!-- Begin Logo -->
-        <a class="navbar-brand" href="{{ site.baseurl }}/">
-          <img src="{{ site.baseurl }}/assets/images/riverpairs.png" alt="River Pairs Logo" />
-        </a>
-        <!-- End Logo -->
+      <!-- Begin Logo -->
+      <a class="navbar-brand" href="{{ site.baseurl }}/">
+        <img src="{{ site.baseurl }}/assets/images/riverpairs.png" alt="River Pairs Logo" />
+      </a>
+      <!-- End Logo -->
+
+      <!-- Begin Menu -->
+      <div class="collapse navbar-collapse" id="navbarsWow">
 
         <!-- Begin Menu -->
-        <div class="collapse navbar-collapse" id="navbarsWow">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ site.baseurl }}/hand-matrix"><i class="fas fa-th mr-1 text-primary"></i> Hand
+              Matrix</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ site.baseurl }}/poker-odds-calculator"><i
+                class="fas fa-calculator mr-1 text-primary"></i> Calculator</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ site.baseurl }}/all-hands">All Hands</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ site.baseurl }}/methodology">Methodology</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ site.baseurl }}/about-me">About</a>
+          </li>
+        </ul>
+        <!-- End Menu -->
 
-            <!-- Begin Menu -->
-            <ul class="navbar-nav ml-auto">
-
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ site.baseurl }}/">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ site.baseurl }}/hand-matrix"><i class="fas fa-th mr-1 text-primary"></i> Hand Matrix</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ site.baseurl }}/poker-odds-calculator"><i class="fas fa-calculator mr-1 text-primary"></i> Calculator</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ site.baseurl }}/all-hands">All Hands</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ site.baseurl }}/methodology">Methodology</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ site.baseurl }}/about-me">About</a>
-                </li>
-            </ul>
-            <!-- End Menu -->
-
-        </div>
+      </div>
     </div>
-</header>
+  </header>
 
 
 
-<!-- End Menu Navigation
+  <!-- End Menu Navigation
 ================================================== -->
 
-<div class="site-content">
+  <div class="site-content">
 
     <div class="container">
 
 
-    <!-- Content
+      <!-- Content
     ================================================== -->
-    <div class="main-content">
+      <div class="main-content">
         {{ content }}
-    </div>
+      </div>
 
     </div><!-- /.container -->
 
-<!-- Ezoic - bottom_of_page - bottom_of_page -->
-<div id="ezoic-pub-ad-placeholder-103"> </div>
-<!-- End Ezoic - bottom_of_page - bottom_of_page -->
+    <!-- Ezoic - bottom_of_page - bottom_of_page -->
+    <div id="ezoic-pub-ad-placeholder-103"> </div>
+    <!-- End Ezoic - bottom_of_page - bottom_of_page -->
 
     <!-- Begin Footer
     ================================================== -->
     <footer class="footer">
 
-        <div class="container">          
-            <div class="row">
+      <div class="container">
+        <div class="row">
 
-                <div class="col-sm-3">
-                  <div class="footer-widget">
-                    <h5 class="title">Interactive Tools</h5>
-                    <ul>
-                      <li><a href="{{ site.baseurl }}/hand-matrix">13x13 Starting Hand Matrix</a></li>
-                      <li><a href="{{ site.baseurl }}/poker-odds-calculator">Pre-Flop Odds Calculator</a></li>
-                      <li><a href="{{ site.baseurl }}/pot-odds-calculator">Pot Odds &amp; Equity Calculator</a></li>
-                      <li><a href="{{ site.baseurl }}/all-hands">All 14,365 Matchups</a></li>
-                    </ul>
-                  </div>
-                </div>
+          <div class="col-sm-3">
+            <div class="footer-widget">
+              <h5 class="title">Interactive Tools</h5>
+              <ul>
+                <li><a href="{{ site.baseurl }}/hand-matrix">13x13 Starting Hand Matrix</a></li>
+                <li><a href="{{ site.baseurl }}/poker-odds-calculator">Pre-Flop Odds Calculator</a></li>
+                <li><a href="{{ site.baseurl }}/pot-odds-calculator">Pot Odds &amp; Equity Calculator</a></li>
+                <li><a href="{{ site.baseurl }}/all-hands">All 14,365 Matchups</a></li>
+              </ul>
+            </div>
+          </div>
 
-                <div class="col-sm-3">
-                  <div class="footer-widget">
-                    <h5 class="title">Strategy Pillars</h5>
-                    <ul>
-                      <li><a href="{{ site.baseurl }}/sklansky-rating-explained">Sklansky Hand Groups</a></li>
-                      <li><a href="{{ site.baseurl }}/chen-formula-explained">The Chen Formula</a></li>
-                      <li><a href="{{ site.baseurl }}/Hellmuth-tier-explained">Phil Hellmuth Tiers</a></li>
-                      <li><a href="{{ site.baseurl }}/expected-value-explained">Expected Value (EV)</a></li>
-                    </ul>
-                  </div>
-                </div>
+          <div class="col-sm-3">
+            <div class="footer-widget">
+              <h5 class="title">Strategy Pillars</h5>
+              <ul>
+                <li><a href="{{ site.baseurl }}/sklansky-rating-explained">Sklansky Hand Groups</a></li>
+                <li><a href="{{ site.baseurl }}/chen-formula-explained">The Chen Formula</a></li>
+                <li><a href="{{ site.baseurl }}/Hellmuth-tier-explained">Phil Hellmuth Tiers</a></li>
+                <li><a href="{{ site.baseurl }}/expected-value-explained">Expected Value (EV)</a></li>
+              </ul>
+            </div>
+          </div>
 
-                <div class="col-sm-3">
-                  <div class="footer-widget">
-                    <h5 class="title">Hand Categories</h5>
-                    <ul>
-                      <li><a href="{{ site.baseurl }}/pocket-pairs-odds">Pocket Pairs Matchups</a></li>
-                      <li><a href="{{ site.baseurl }}/suited-connectors-odds">Suited Connectors</a></li>
-                      <li><a href="{{ site.baseurl }}/broadway-hands-odds">Broadway Combinations</a></li>
-                      <li><a href="{{ site.baseurl }}/methodology">Odds Methodology</a></li>
-                    </ul>
-                  </div>
-                </div>
+          <div class="col-sm-3">
+            <div class="footer-widget">
+              <h5 class="title">Hand Categories</h5>
+              <ul>
+                <li><a href="{{ site.baseurl }}/pocket-pairs-odds">Pocket Pairs Matchups</a></li>
+                <li><a href="{{ site.baseurl }}/suited-connectors-odds">Suited Connectors</a></li>
+                <li><a href="{{ site.baseurl }}/broadway-hands-odds">Broadway Combinations</a></li>
+                <li><a href="{{ site.baseurl }}/methodology">Odds Methodology</a></li>
+              </ul>
+            </div>
+          </div>
 
 
-                <div class="col-sm-3">
-			<div class="footer-widget">
-                <h5 class="title">About &amp; Disclaimers</h5>
-                <ul>
+          <div class="col-sm-3">
+            <div class="footer-widget">
+              <h5 class="title">About &amp; Disclaimers</h5>
+              <ul>
                 <li><a href="{{ site.baseurl }}/about-me">About Reece Williams</a></li>
                 <li><a href="{{ site.baseurl }}/contact">Contact Us</a></li>
                 <li><a href="{{ site.baseurl }}/affiliate-disclaimer" rel="nofollow">Affiliate Disclaimer</a></li>
                 <li><a href="{{ site.baseurl }}/terms" rel="nofollow">Terms of Service</a></li>
                 <li><a href="{{ site.baseurl }}/privacy" rel="nofollow">Privacy Policy</a></li>
-                </ul>
-			</div>
-                </div>
+              </ul>
             </div>
-
-            <!-- Responsible Gaming Notice -->
-            <div class="row mt-4 pt-3 border-top text-muted small">
-                <div class="col-12">
-                    <p><i class="fas fa-shield-alt mr-1"></i> <strong>18+ Responsible Gaming &amp; Educational Notice:</strong> River Pairs is an independent statistical and mathematical reference portal. All poker odds, equities, and hand ratings are computed for strategic educational and research purposes only. River Pairs does not host games, accept wagers, or operate real-money gaming services. If you or someone you know has a gambling issue, free and confidential support is available at <a href="https://www.begambleaware.org" target="_blank" rel="noopener noreferrer nofollow">BeGambleAware.org</a> or the National Problem Gambling Helpline (1-800-522-4700).</p>
-                </div>
-            </div>
-
-            <div class="copyright mt-2">
-                <p class="pull-left">
-                  Copyright © {{ site.time | date: "%Y" }} {{ site.name }}.
-                </p>
-                <div class="clearfix"></div>
-            </div>
-
+          </div>
         </div>
+
+        <!-- Responsible Gaming Notice -->
+        <div class="row mt-4 pt-3 border-top text-muted small">
+          <div class="col-12">
+            <p><i class="fas fa-shield-alt mr-1"></i> <strong>18+ Responsible Gaming &amp; Educational Notice:</strong>
+              River Pairs is an independent statistical and mathematical reference portal. All poker odds, equities, and
+              hand ratings are computed for strategic educational and research purposes only. River Pairs does not host
+              games, accept wagers, or operate real-money gaming services. If you or someone you know has a gambling
+              issue, free and confidential support is available at <a href="https://www.begambleaware.org"
+                target="_blank" rel="noopener noreferrer nofollow">BeGambleAware.org</a> or the National Problem
+              Gambling Helpline (1-800-522-4700).</p>
+          </div>
+        </div>
+
+        <div class="copyright mt-2">
+          <p class="pull-left">
+            Copyright © {{ site.time | date: "%Y" }} {{ site.name }}.
+          </p>
+          <div class="clearfix"></div>
+        </div>
+
+      </div>
 
     </footer>
     <!-- End Footer
     ================================================== -->
 
 
-</div> <!-- /.site-content>
+  </div> <!-- /.site-content>
 
 <!-- JavaScript
 ================================================== -->
 
-<script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
- 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+    integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+    crossorigin="anonymous"></script>
 
-<script src="{{ site.baseurl }}/assets/js/ie10-viewport-bug-workaround.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+    integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+    crossorigin="anonymous"></script>
 
-<script type='text/javascript' src='{{ site.baseurl }}/assets/js/masonry.pkgd.min.js'></script>
-<script type='text/javascript' src='{{ site.baseurl }}/assets/js/lazysizes.min.js' async></script>
+  <script src="{{ site.baseurl }}/assets/js/ie10-viewport-bug-workaround.js"></script>
 
-<script src="{{ site.baseurl }}/assets/js/theme.js"></script>
+  <script type='text/javascript' src='{{ site.baseurl }}/assets/js/masonry.pkgd.min.js'></script>
+  <script type='text/javascript' src='{{ site.baseurl }}/assets/js/lazysizes.min.js' async></script>
+
+  <script src="{{ site.baseurl }}/assets/js/theme.js"></script>
 </body>
 
 </html>
