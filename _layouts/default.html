@@ -15,29 +15,37 @@
 <meta name="google-site-verification" content="3hy6rng49LmxKJ53UCGkhh56RmYZTdFZoHEpkktdxOY" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="max-image-preview:large">
+{% if page.card_1_label and page.card_2_label %}
+  {% capture page_title %}{{ page.card_1_label }} vs {{ page.card_2_label }} Odds & Equity (Who Wins?) | {{ site.title_suffix }}{% endcapture %}
+  {% capture page_meta_desc %}{{ page.card_1_label }} vs {{ page.card_2_label }}: {{ page.card_1_label }} holds {{ page.eq_1 }}% equity vs {{ page.card_2_label }} ({{ page.eq_2 }}%) with a {{ page.tie }}% tie probability. Detailed pre-flop odds and post-flop strategy.{% endcapture %}
+{% else %}
+  {% capture page_title %}{{ page.title }} | {{ site.title_suffix }}{% endcapture %}
+  {% capture page_meta_desc %}{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
+{% endif %}
+
 <link rel="icon" href="{{ site.baseurl }}/riverpairs.ico">
-<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta name="description" content="{{ page_meta_desc }}">
 	
 {% if page.tags != blank %}	
 <meta name="keyword" content="{{ page.tags }}">
 {% endif %}
 	
-<title>{{ page.title }} | {{ site.title_suffix }}</title>
+<title>{{ page_title }}</title>
   
 <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
 
 <!-- Open Graph / Facebook / Discord -->
 <meta property="og:site_name" content="{{ site.name }}">
-<meta property="og:title" content="{{ page.title }}">
-<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta property="og:title" content="{{ page_title }}">
+<meta property="og:description" content="{{ page_meta_desc }}">
 <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 <meta property="og:image" content="{{ site.url }}{% if page.image %}/{{ page.image }}{% else %}/assets/images/riverpairs.png{% endif %}">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ page.title }}">
-<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta name="twitter:title" content="{{ page_title }}">
+<meta name="twitter:description" content="{{ page_meta_desc }}">
 <meta name="twitter:image" content="{{ site.url }}{% if page.image %}/{{ page.image }}{% else %}/assets/images/riverpairs.png{% endif %}">
 
 <!-- IndexNow API Key -->
@@ -67,7 +75,7 @@
 
         <!-- Begin Logo -->
         <a class="navbar-brand" href="{{ site.baseurl }}/">
-          <img src="{{ site.baseurl }}/assets/images/riverpairs.png" />
+          <img src="{{ site.baseurl }}/assets/images/riverpairs.png" alt="River Pairs Logo" />
         </a>
         <!-- End Logo -->
 
@@ -81,7 +89,16 @@
                   <a class="nav-link" href="{{ site.baseurl }}/">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ site.baseurl }}/all-hands">All Hand Combinations</a>
+                  <a class="nav-link" href="{{ site.baseurl }}/hand-matrix"><i class="fas fa-th mr-1 text-primary"></i> Hand Matrix</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ site.baseurl }}/poker-odds-calculator"><i class="fas fa-calculator mr-1 text-primary"></i> Calculator</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ site.baseurl }}/all-hands">All Hands</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ site.baseurl }}/methodology">Methodology</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{{ site.baseurl }}/about-me">About</a>
@@ -124,27 +141,49 @@
 
                 <div class="col-sm-3">
                   <div class="footer-widget">
+                    <h5 class="title">Interactive Tools</h5>
+                    <ul>
+                      <li><a href="{{ site.baseurl }}/hand-matrix">13x13 Starting Hand Matrix</a></li>
+                      <li><a href="{{ site.baseurl }}/poker-odds-calculator">Pre-Flop Odds Calculator</a></li>
+                      <li><a href="{{ site.baseurl }}/pot-odds-calculator">Pot Odds &amp; Equity Calculator</a></li>
+                      <li><a href="{{ site.baseurl }}/all-hands">All 14,365 Matchups</a></li>
+                    </ul>
                   </div>
                 </div>
 
                 <div class="col-sm-3">
                   <div class="footer-widget">
+                    <h5 class="title">Strategy Pillars</h5>
+                    <ul>
+                      <li><a href="{{ site.baseurl }}/sklansky-rating-explained">Sklansky Hand Groups</a></li>
+                      <li><a href="{{ site.baseurl }}/chen-formula-explained">The Chen Formula</a></li>
+                      <li><a href="{{ site.baseurl }}/Hellmuth-tier-explained">Phil Hellmuth Tiers</a></li>
+                      <li><a href="{{ site.baseurl }}/expected-value-explained">Expected Value (EV)</a></li>
+                    </ul>
                   </div>
                 </div>
 
                 <div class="col-sm-3">
-                <div class="footer-widget">
-                </div>
+                  <div class="footer-widget">
+                    <h5 class="title">Hand Categories</h5>
+                    <ul>
+                      <li><a href="{{ site.baseurl }}/pocket-pairs-odds">Pocket Pairs Matchups</a></li>
+                      <li><a href="{{ site.baseurl }}/suited-connectors-odds">Suited Connectors</a></li>
+                      <li><a href="{{ site.baseurl }}/broadway-hands-odds">Broadway Combinations</a></li>
+                      <li><a href="{{ site.baseurl }}/methodology">Odds Methodology</a></li>
+                    </ul>
+                  </div>
                 </div>
 
 
                 <div class="col-sm-3">
 			<div class="footer-widget">
-                <h5 class="title">About {{ site.name }}</h5>
+                <h5 class="title">About &amp; Disclaimers</h5>
                 <ul>
                 <li><a href="{{ site.baseurl }}/about-me">About Reece Williams</a></li>
+                <li><a href="{{ site.baseurl }}/contact">Contact Us</a></li>
                 <li><a href="{{ site.baseurl }}/affiliate-disclaimer" rel="nofollow">Affiliate Disclaimer</a></li>
-                <li><a href="{{ site.baseurl }}/terms" rel="nofollow">Terms and Conditions</a></li>
+                <li><a href="{{ site.baseurl }}/terms" rel="nofollow">Terms of Service</a></li>
                 <li><a href="{{ site.baseurl }}/privacy" rel="nofollow">Privacy Policy</a></li>
                 </ul>
 			</div>
