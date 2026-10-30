@@ -14,7 +14,7 @@ post_class: post-template
 
 		<div class="col-md-8 col-lg-8">
 			<div class="mainheading">
-				<h1 class="posttitle" itemprop="headline name">{{ page.title }}</h1>
+				<h1 class="posttitle" itemprop="headline name">{{ page.title | split: " | " | first }}</h1>
 			</div>
 			
 			{% if page.eq_1 and page.eq_2 %}
@@ -212,6 +212,7 @@ post_class: post-template
                 </div>
             </div>
 
+            {% unless page.eq_1 and page.eq_2 %}
             <!-- Prev/Next -->
             <div class="row PageNavigation mt-4 prevnextlinks">
               {% if page.previous.url %}
@@ -226,6 +227,7 @@ post_class: post-template
               {% endif %}
             </div>
             <!-- End Prev/Next -->
+            {% endunless %}
 
 
              <!-- Author Box -->
