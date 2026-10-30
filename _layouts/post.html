@@ -17,10 +17,6 @@ post_class: post-template
 				<h1 class="posttitle" itemprop="headline name">{{ page.title }}</h1>
 			</div>
 			
-			{% if page.first_paragraph %}
-			<div class="intro-block">{{ page.first_paragraph }}</div>
-			{% endif %}
-
 			{% if page.eq_1 and page.eq_2 %}
 			<div class="quick-verdict-box alert alert-info mt-3 mb-4 p-3 border rounded" style="background: #f0f7fd; border-left: 5px solid #00B2D8;">
 				<h4 class="h5 font-weight-bold mb-2"><i class="fas fa-trophy mr-1 text-primary"></i> Quick Matchup Summary</h4>
@@ -36,7 +32,7 @@ post_class: post-template
 					&nbsp;&bull;&nbsp; 
 					<strong>Win Probabilities:</strong> {{ page.card_1_label }}: {{ page.win_1 }}% &bull; {{ page.card_2_label }}: {{ page.win_2 }}% &bull; Tie: {{ page.tie }}%
 				</p>
-				<p class="mb-0 small text-muted">
+				<p class="mb-2 small text-muted">
 					{% if page.eq_1 > 48 and page.eq_1 < 52 %}
 						This is a classic Texas Hold'em <strong>"coin flip"</strong> scenario where neither starting hand possesses a decisive mathematical advantage pre-flop.
 					{% elsif page.eq_1 >= 70 or page.eq_2 >= 70 %}
@@ -45,7 +41,13 @@ post_class: post-template
 						The favorite carries a clear mathematical edge, though post-flop board connectivity will heavily influence the winning outcome.
 					{% endif %}
 				</p>
+				<div class="border-top pt-2 mt-2 d-flex justify-content-between align-items-center small text-muted">
+					<span><i class="fas fa-calculator mr-1 text-info"></i> Based on 1.7M+ Monte Carlo simulations</span>
+					<a href="{{ site.baseurl }}/methodology" class="text-primary font-weight-bold">Odds Methodology &raquo;</a>
+				</div>
 			</div>
+			{% elsif page.first_paragraph %}
+			<div class="intro-block">{{ page.first_paragraph }}</div>
 			{% endif %}
 
 			
