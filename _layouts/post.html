@@ -19,7 +19,7 @@ post_class: post-template
 			
 			{% if page.eq_1 and page.eq_2 %}
 			<div class="quick-verdict-box alert alert-info mt-3 mb-4 p-3 border rounded" style="background: #f0f7fd; border-left: 5px solid #00B2D8;">
-				<h4 class="h5 font-weight-bold mb-2"><i class="fas fa-trophy mr-1 text-primary"></i> Quick Matchup Summary</h4>
+				<h2 class="h5 font-weight-bold mb-2"><i class="fas fa-trophy mr-1 text-primary"></i> Quick Matchup Summary</h2>
 				<p class="mb-1">
 					<strong>Pre-Flop Favorite:</strong> 
 					{% if page.eq_1 > page.eq_2 %}
@@ -63,9 +63,9 @@ post_class: post-template
 				{% if page.eq_1 and page.eq_2 %}
 				<!-- Post-Flop Strategy & Analytical Deep Dive -->
 				<section class="strategy-analysis-box my-4 p-4 rounded border bg-white shadow-sm">
-					<h3 class="h4 font-weight-bold text-dark mb-3">
+					<h2 class="h4 font-weight-bold text-dark mb-3">
 						<i class="fas fa-chess-knight text-primary mr-2"></i>Strategic Breakdown: {{ page.card_1_label }} vs {{ page.card_2_label }}
-					</h3>
+					</h2>
 					<p class="lead" style="font-size: 1.05rem;">
 						{% if page.eq_1 > page.eq_2 %}
 							<strong>{{ page.card_1_label }}</strong> enters this matchup as the pre-flop favorite with <strong>{{ page.eq_1 }}% equity</strong>, while <strong>{{ page.card_2_label }}</strong> trails at <strong>{{ page.eq_2 }}%</strong> (with {{ page.tie }}% tie probability).
@@ -79,9 +79,9 @@ post_class: post-template
 					<div class="row my-3">
 						<div class="col-md-6 mb-3">
 							<div class="p-3 bg-light rounded border h-100">
-								<h5 class="h6 font-weight-bold text-dark mb-2">
+								<h3 class="h6 font-weight-bold text-dark mb-2">
 									<i class="fas fa-bullseye text-success mr-1"></i> Pre-Flop Equity Distribution
-								</h5>
+								</h3>
 								<ul class="list-unstyled mb-0 small">
 									<li class="mb-1"><strong>{{ page.card_1_label }} Direct Win:</strong> {{ page.win_1 }}%</li>
 									<li class="mb-1"><strong>{{ page.card_2_label }} Direct Win:</strong> {{ page.win_2 }}%</li>
@@ -100,9 +100,9 @@ post_class: post-template
 						</div>
 						<div class="col-md-6 mb-3">
 							<div class="p-3 bg-light rounded border h-100">
-								<h5 class="h6 font-weight-bold text-dark mb-2">
+								<h3 class="h6 font-weight-bold text-dark mb-2">
 									<i class="fas fa-layer-group text-info mr-1"></i> Flop Probability Benchmarks
-								</h5>
+								</h3>
 								<ul class="list-unstyled mb-0 small">
 									<li class="mb-1"><strong>Set-Mining (Pocket Pairs):</strong> 11.8% to flop a set (7.5 to 1 against).</li>
 									<li class="mb-1"><strong>Flopping a Flush (Suited):</strong> 0.84% (118 to 1); Flush draw: 10.9% (8 to 1).</li>
@@ -121,13 +121,13 @@ post_class: post-template
 						</div>
 					</div>
 
-					<h4 class="h5 font-weight-bold text-dark mt-4 mb-3">
+					<h2 class="h5 font-weight-bold text-dark mt-4 mb-3">
 						<i class="fas fa-question-circle text-primary mr-1"></i> Frequently Asked Questions: {{ page.card_1_label }} vs {{ page.card_2_label }}
-					</h4>
+					</h2>
 					<div class="faq-list">
 						<div class="card mb-2 border">
 							<div class="card-header bg-light py-2 px-3">
-								<h5 class="h6 mb-0 font-weight-bold text-dark">Who is favored to win between {{ page.card_1_label }} and {{ page.card_2_label }}?</h5>
+								<h3 class="h6 mb-0 font-weight-bold text-dark">Who is favored to win between {{ page.card_1_label }} and {{ page.card_2_label }}?</h3>
 							</div>
 							<div class="card-body py-2 px-3 small text-muted">
 								{% if page.eq_1 > page.eq_2 %}
@@ -142,7 +142,7 @@ post_class: post-template
 
 						<div class="card mb-2 border">
 							<div class="card-header bg-light py-2 px-3">
-								<h5 class="h6 mb-0 font-weight-bold text-dark">How does this matchup change on the flop?</h5>
+								<h3 class="h6 mb-0 font-weight-bold text-dark">How does this matchup change on the flop?</h3>
 							</div>
 							<div class="card-body py-2 px-3 small text-muted">
 								Pre-flop equities represent full five-card river run-outs across all 1.7 million combinatorial boards. However, the three-card flop accounts for roughly 71% of a hand's final texture. When the flop brings cards that coordinate with the underdog's holdings (such as straight or flush draws, or hitting an overcard), the trailing hand's equity can surge past 65–75% on the turn.
@@ -151,7 +151,7 @@ post_class: post-template
 
 						<div class="card mb-2 border">
 							<div class="card-header bg-light py-2 px-3">
-								<h5 class="h6 mb-0 font-weight-bold text-dark">What is the probability of a split pot or bad beat?</h5>
+								<h3 class="h6 mb-0 font-weight-bold text-dark">What is the probability of a split pot or bad beat?</h3>
 							</div>
 							<div class="card-body py-2 px-3 small text-muted">
 								In this exact matchup, the tie probability is {{ page.tie }}%. The underdog has a direct win probability of {% if page.eq_1 > page.eq_2 %}{{ page.win_2 }}%{% else %}{{ page.win_1 }}%{% endif %}, meaning the trailing hand will overturn the favorite roughly 1 in every {% if page.eq_1 > page.eq_2 %}{{ 100 | divided_by: page.win_2 | round: 1 }}{% else %}{{ 100 | divided_by: page.win_1 | round: 1 }}{% endif %} showdowns.
@@ -160,7 +160,7 @@ post_class: post-template
 
 						<div class="card mb-2 border">
 							<div class="card-header bg-light py-2 px-3">
-								<h5 class="h6 mb-0 font-weight-bold text-dark">How should you play this matchup in tournaments vs cash games?</h5>
+								<h3 class="h6 mb-0 font-weight-bold text-dark">How should you play this matchup in tournaments vs cash games?</h3>
 							</div>
 							<div class="card-body py-2 px-3 small text-muted">
 								In deep-stacked cash games (100bb+), position and post-flop implied odds dictate whether calling pre-flop raises is profitable. In tournament play with shallower stack depths (under 25bb), stack-to-pot ratios (SPR) shrink dramatically, making all-in shoves and 3-bet commitments mathematically dictated by pre-flop push/fold equity rather than post-flop maneuvering.
@@ -191,7 +191,7 @@ post_class: post-template
 
             <!-- Related Matchups & Tools Hub -->
             <div class="related-tools-box my-4 p-3 bg-light rounded border">
-                <h5 class="h6 font-weight-bold text-dark mb-2"><i class="fas fa-tools text-primary mr-1"></i> Interactive Poker Tools &amp; Hubs</h5>
+                <h2 class="h6 font-weight-bold text-dark mb-2"><i class="fas fa-tools text-primary mr-1"></i> Interactive Poker Tools &amp; Hubs</h2>
                 <div class="row small">
                     <div class="col-md-6 mb-2">
                         <a href="{{ site.baseurl }}/hand-matrix" class="font-weight-bold text-dark"><i class="fas fa-th text-success mr-1"></i> 13x13 Hand Heatmap Matrix</a>
@@ -260,13 +260,13 @@ post_class: post-template
 <!-- End Article
 ================================================== -->
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% if page.eq_1 and page.eq_2 %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
 
 <script>
 	const ctx = document.getElementById('EquityChart');
 	const ctxWin = document.getElementById('WinChart');
   
-	{% if page.eq_1 and page.eq_2 %}
 	new Chart(ctx, {
 	  type: 'doughnut',
 	  data: {

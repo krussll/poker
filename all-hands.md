@@ -126,7 +126,6 @@ description: "Comprehensive Texas Hold'em starting hands directory. Explore all 
 
 <div class="directory-container">
   <div class="text-center mb-4">
-    <h1 class="h2 font-weight-bold">Texas Hold'em Starting Hands Directory</h1>
     <p class="lead text-muted">
       Access complete combinatorial probabilities, pre-flop equities, and strategic run-outs for all <strong>169 canonical hands</strong> and <strong>14,365 heads-up matchups</strong>.
     </p>
@@ -151,9 +150,9 @@ description: "Comprehensive Texas Hold'em starting hands directory. Explore all 
 
   <!-- High-Profile Matchup Hubs -->
   <div class="matchup-spotlight mb-5">
-    <h3 class="h5 font-weight-bold mb-3 text-dark">
+    <h2 class="h5 font-weight-bold mb-3 text-dark">
       <i class="fas fa-fire text-danger mr-1"></i> Legendary Texas Hold'em Showdowns
-    </h3>
+    </h2>
     <div class="row">
       <div class="col-md-6">
         <a href="/kk-vs-aa" class="spotlight-link">
@@ -189,14 +188,14 @@ description: "Comprehensive Texas Hold'em starting hands directory. Explore all 
   <!-- Hand Matrix CTA -->
   <div class="alert alert-info d-flex justify-content-between align-items-center p-3 mb-4 rounded border">
     <div>
-      <h5 class="h6 font-weight-bold mb-1"><i class="fas fa-th mr-1 text-primary"></i> Prefer a Visual Heatmap?</h5>
+      <div class="h6 font-weight-bold mb-1"><i class="fas fa-th mr-1 text-primary"></i> Prefer a Visual Heatmap?</div>
       <p class="small text-muted mb-0">Use our interactive 13x13 grid with color-coded range categories and instant equity overlays.</p>
     </div>
     <a href="/hand-matrix" class="btn btn-primary btn-sm text-nowrap ml-3">Open 13x13 Matrix &raquo;</a>
   </div>
 
   <!-- Cards Grid -->
-  <h3 class="h4 font-weight-bold text-dark mb-3">All 169 Starting Hands</h3>
+  <h2 class="h4 font-weight-bold text-dark mb-3">All 169 Starting Hands</h2>
   <div class="hand-card-grid" id="handCards"></div>
 </div>
 
@@ -266,7 +265,7 @@ function renderHandCards(hands) {
     let typeLabel = h.type === 'pair' ? 'PAIR' : (h.type === 'suited' ? 'SUITED' : 'OFFSUIT');
     card.innerHTML = `
       <span class="badge-type">${typeLabel}</span>
-      <h4 class="hand-name">${h.code}</h4>
+      <div class="hand-name">${h.code}</div>
       <div class="hand-equity">View Matchups &raquo;</div>
     `;
     container.appendChild(card);

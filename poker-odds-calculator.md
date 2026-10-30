@@ -100,8 +100,8 @@ description: "Instant pre-flop poker odds calculator. Compare any two Texas Hold
       <!-- Player 1 Hand -->
       <div class="col-md-5 mb-3 mb-md-0">
         <div class="player-box p1-box text-center">
-          <h5 class="text-primary font-weight-bold mb-2"><i class="fas fa-user mr-1"></i> Hand 1</h5>
-          <select id="hand1Select" class="hand-select mb-2" onchange="calculateOdds()">
+          <label for="hand1Select" class="h5 text-primary font-weight-bold mb-2 d-block"><i class="fas fa-user mr-1"></i> Hand 1</label>
+          <select id="hand1Select" class="hand-select mb-2" aria-label="Hand 1 Selection" onchange="calculateOdds()">
             <!-- Populated via JS -->
           </select>
           <div class="h3 font-weight-bold text-primary mb-1" id="p1EquityDisplay">81.95%</div>
@@ -117,8 +117,8 @@ description: "Instant pre-flop poker odds calculator. Compare any two Texas Hold
       <!-- Player 2 Hand -->
       <div class="col-md-5">
         <div class="player-box p2-box text-center">
-          <h5 class="text-danger font-weight-bold mb-2"><i class="fas fa-user mr-1"></i> Hand 2</h5>
-          <select id="hand2Select" class="hand-select mb-2" onchange="calculateOdds()">
+          <label for="hand2Select" class="h5 text-danger font-weight-bold mb-2 d-block"><i class="fas fa-user mr-1"></i> Hand 2</label>
+          <select id="hand2Select" class="hand-select mb-2" aria-label="Hand 2 Selection" onchange="calculateOdds()">
             <!-- Populated via JS -->
           </select>
           <div class="h3 font-weight-bold text-danger mb-1" id="p2EquityDisplay">18.05%</div>
@@ -151,7 +151,7 @@ description: "Instant pre-flop poker odds calculator. Compare any two Texas Hold
   <div class="row mt-4">
     <div class="col-md-6 mb-3">
       <div class="card h-100 p-3 bg-light border-0">
-        <h5 class="font-weight-bold text-dark"><i class="fas fa-question-circle text-primary mr-1"></i> How Is Equity Calculated?</h5>
+        <h2 class="h5 font-weight-bold text-dark"><i class="fas fa-question-circle text-primary mr-1"></i> How Is Equity Calculated?</h2>
         <p class="small text-muted mb-0">
           Hand equity represents your statistical share of the pot. It equals your direct win percentage plus half of your tie percentage: <code>Equity = Win% + (Tie% / 2)</code>. Learn more in our <a href="/methodology">Calculation Methodology</a>.
         </p>
@@ -159,7 +159,7 @@ description: "Instant pre-flop poker odds calculator. Compare any two Texas Hold
     </div>
     <div class="col-md-6 mb-3">
       <div class="card h-100 p-3 bg-light border-0">
-        <h5 class="font-weight-bold text-dark"><i class="fas fa-balance-scale text-primary mr-1"></i> What Is A Coin Flip?</h5>
+        <h2 class="h5 font-weight-bold text-dark"><i class="fas fa-balance-scale text-primary mr-1"></i> What Is A Coin Flip?</h2>
         <p class="small text-muted mb-0">
           A "coin flip" occurs when two hands have nearly identical pre-flop equities (roughly 48% to 52%), such as a pocket pair vs. two overcards (e.g. <a href="/22-vs-ako">22 vs AKo</a> or <a href="/qq-vs-aks">QQ vs AKs</a>).
         </p>

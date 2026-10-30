@@ -38,22 +38,22 @@ description: "Free Texas Hold'em pot odds calculator. Calculate pot odds, requir
     <div class="row">
       <!-- Input Column -->
       <div class="col-md-6 mb-4 mb-md-0">
-        <h5 class="font-weight-bold text-dark mb-3"><i class="fas fa-coins text-warning mr-2"></i> Bet &amp; Pot Inputs</h5>
+        <h2 class="h5 font-weight-bold text-dark mb-3"><i class="fas fa-coins text-warning mr-2"></i> Bet &amp; Pot Inputs</h2>
         
         <div class="form-group mb-3">
-          <label class="font-weight-bold small text-muted">Current Pot Size ($ or Chips):</label>
+          <label for="inputPot" class="font-weight-bold small text-muted">Current Pot Size ($ or Chips):</label>
           <input type="number" id="inputPot" class="form-control form-control-lg" value="100" min="1" oninput="calculatePotOdds()">
           <small class="form-text text-muted">Total chips in the pot before your opponent's bet.</small>
         </div>
 
         <div class="form-group mb-3">
-          <label class="font-weight-bold small text-muted">Bet Size Faced to Call ($ or Chips):</label>
+          <label for="inputBet" class="font-weight-bold small text-muted">Bet Size Faced to Call ($ or Chips):</label>
           <input type="number" id="inputBet" class="form-control form-control-lg" value="50" min="1" oninput="calculatePotOdds()">
           <small class="form-text text-muted">The exact amount you must call.</small>
         </div>
 
         <div class="form-group mb-3">
-          <label class="font-weight-bold small text-muted">Known Outs (Optional):</label>
+          <label for="selectOuts" class="font-weight-bold small text-muted">Known Outs (Optional):</label>
           <select id="selectOuts" class="form-control" onchange="calculatePotOdds()">
             <option value="0">Custom / Unknown</option>
             <option value="9">9 Outs (Flush Draw - ~36% flop to river)</option>
@@ -67,7 +67,7 @@ description: "Free Texas Hold'em pot odds calculator. Calculate pot odds, requir
 
       <!-- Result Column -->
       <div class="col-md-6">
-        <h5 class="font-weight-bold text-dark mb-3"><i class="fas fa-chart-line text-primary mr-2"></i> Mathematical Results</h5>
+        <h2 class="h5 font-weight-bold text-dark mb-3"><i class="fas fa-chart-line text-primary mr-2"></i> Mathematical Results</h2>
         
         <div class="result-box mb-3">
           <div class="mb-3">
@@ -95,7 +95,7 @@ description: "Free Texas Hold'em pot odds calculator. Calculate pot odds, requir
   <div class="row mt-4">
     <div class="col-md-4 mb-3">
       <div class="p-3 bg-light rounded border h-100">
-        <h6 class="font-weight-bold text-dark">The Pot Odds Formula</h6>
+        <h3 class="h6 font-weight-bold text-dark">The Pot Odds Formula</h3>
         <p class="small text-muted mb-0">
           <code>Required Equity = Call / (Pot + Bet + Call)</code>. If your equity is higher than this percentage, calling makes money over time.
         </p>
@@ -103,7 +103,7 @@ description: "Free Texas Hold'em pot odds calculator. Calculate pot odds, requir
     </div>
     <div class="col-md-4 mb-3">
       <div class="p-3 bg-light rounded border h-100">
-        <h6 class="font-weight-bold text-dark">Rule of 4 and 2</h6>
+        <h3 class="h6 font-weight-bold text-dark">Rule of 4 and 2</h3>
         <p class="small text-muted mb-0">
           Multiply your outs by <strong>4</strong> on the flop to estimate equity with two cards to come. Multiply by <strong>2</strong> on the turn with one card to come.
         </p>
@@ -111,7 +111,7 @@ description: "Free Texas Hold'em pot odds calculator. Calculate pot odds, requir
     </div>
     <div class="col-md-4 mb-3">
       <div class="p-3 bg-light rounded border h-100">
-        <h6 class="font-weight-bold text-dark">Comparing Hand Equities</h6>
+        <h3 class="h6 font-weight-bold text-dark">Comparing Hand Equities</h3>
         <p class="small text-muted mb-0">
           Need to know your exact hand equity against an opponent? Check our <a href="/poker-odds-calculator">Odds Calculator</a> or browse <a href="/all-hands">All Matchups</a>.
         </p>

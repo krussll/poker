@@ -57,12 +57,14 @@ section.featured-posts {
 section.recent-posts {
     margin-bottom:0;
 }
+.section-title h1,
 .section-title h2 {
 	font-weight:700;
 	font-size:1.4rem;
 	margin-bottom:27px;
     position: relative;
 }
+.section-title h1:before,
 .section-title h2:before {
     margin-bottom: 0;
     position: absolute;
@@ -89,6 +91,7 @@ section.recent-posts {
     text-transform: none;
     letter-spacing:0;
 }
+.layout-page .section-title h1:before,
 .layout-page .section-title h2:before {top:17px;}
 .article-post ol, .article-post ul { margin-bottom:1.5rem;}
 .article-post ol ol, .article-post ul ul {   
@@ -407,7 +410,8 @@ span.post-name a,span.post-read-more a:hover {
 .footer a {color:inherit;}
 .footer a:hover {color:#fff; text-decoration:none;}
 .footer-widget {margin-bottom: 3rem;    margin-top: 3rem;font-size:15px;}
-.footer-widget h5.title {font-size:18px; text-transform:uppercase;letter-spacing:1px;color:#fff;margin-bottom:1.5rem;}
+.footer-widget .title,
+.footer-widget h5.title {font-size:18px; text-transform:uppercase;letter-spacing:1px;color:#fff;margin-bottom:1.5rem;font-weight:700;}
 .footer-widget ul {list-style:none;padding-left:0;}
 .footer-widget ul li {margin:12px 0;}
 .footer-widget .recent-posts img {float:left;margin-right:10px;}
@@ -715,7 +719,9 @@ a.btn {color:#fff;}
     margin-bottom: 1.5rem;
 }
 .sidebar {max-width:340px;font-size: 15px;}
+.sidebar h3,
 .sidebar h5 {    margin-bottom: 1rem;   text-align:center; position:relative;font-weight: 700; }
+.sidebar h3 span,
 .sidebar h5 span {
 background-color: #fff;
     position: relative;
@@ -726,6 +732,7 @@ background-color: #fff;
     font-size: 14px;
     letter-spacing: 1px;
 }
+.sidebar h3:before,
 .sidebar h5:before {
     margin-bottom: 0;
     position: absolute;
@@ -739,11 +746,15 @@ background-color: #fff;
 }
 .sidebar ul {list-style:none;padding-left:0;}
 .sidebar ul li a {
-    color: #999;
+    color: #495057;
     border-bottom: 1px solid #f6f6f6;
     display: block;
     padding-bottom: 10px;
     padding-top: 10px;
+}
+.sidebar ul li a:hover {
+    color: #007088;
+    text-decoration: none;
 }
 .sidebar-section {     margin-bottom: 2rem;
     box-shadow: 0 0px 1px 0 rgba(0,0,0,0.1);

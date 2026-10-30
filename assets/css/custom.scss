@@ -7,3 +7,27 @@
 @import
 	"syntax"
 ;
+
+/* Accessibility & Color Contrast Enhancements */
+.quick-verdict-box {
+  .text-success {
+    color: #155724 !important;
+  }
+  a.text-primary,
+  .text-primary {
+    color: #005a6e !important;
+  }
+}
+
+.player-box {
+  .text-primary {
+    color: #006075 !important;
+  }
+  .text-danger {
+    color: #8b131c !important;
+  }
+}
+
+.text-muted {
+  color: #55595c !important;
+}
